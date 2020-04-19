@@ -18,8 +18,10 @@ if mode == "dev":
         updater.start_polling()
 elif mode == "prod":
     def run(updater):
-        PORT = int(os.environ.get("PORT", "8443"))
-        HEROKU_APP_NAME = os.environ.get("applealibot")
+        #PORT = int(os.environ.get("PORT", "8443"))
+        #HEROKU_APP_NAME = os.environ.get("applealibot")
+		PORT = 8443
+		
         # Code from https://github.com/python-telegram-bot/python-telegram-bot/wiki/Webhooks#heroku
         updater.start_webhook(listen="0.0.0.0",
                               port=PORT,
